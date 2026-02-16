@@ -22,6 +22,16 @@ app.get('/', (req, res) => {
   });
 });
 
+// Rota para verificar a saúde da API
+app.get('/health', (req, res) => {
+  res.json({
+    status: 'ok',
+    uptime: process.uptime(),
+    timestamp: new Date()
+  });
+});
+
+
 // Inicia o servidor
 app.listen(PORT, () => {
   console.log(`✅ Servidor rodando em http://localhost:${PORT}`);
