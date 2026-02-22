@@ -1,11 +1,47 @@
-GET http://localhost:3000/health
+GET http://localhost:3000/health  HTTP/1.1
 
 ###
 
-POST https://example.com/comments HTTP/1.1
+POST http:/localhost:3000/clientes  HTTP/1.1
 content-type: application/json
 
 {
-    "name": "sample",
-    "time": "Wed, 21 Oct 2015 18:27:50 GMT"
+    "name": "John Doe",
+    "email": "john.doe@example.com"
 }
+
+###
+
+POST 127.0.0.1:3000/clientes  HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Fulano de Tal",
+    "email": "fulano.detal@example.com"
+}
+###
+
+GET http:/localhost:3000/clientes  HTTP/1.1
+
+###
+
+PUT http:/localhost:3000/clientes/1   HTTP/1.1
+content-type: application/json
+
+{
+    "name": "John Doe",
+    "email": "john.doe@example.com"
+}
+
+###
+
+PATCH http:/localhost:3000/clientes/1   HTTP/1.1
+content-type: application/json
+
+{
+    "email": "novo_email@example.com" 
+}
+
+###
+
+DELETE http:/localhost:3000/clientes/1   HTTP/1.1
